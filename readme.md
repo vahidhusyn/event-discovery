@@ -21,13 +21,13 @@ cd event-discovery bash
 ```
 
 ### 2️⃣ Install Dependencies
+**Backend**:
 ```bash
-Backend:
 cd backend
 npm install
 ```
 
-Frontend:
+**Frontend**:
 ```bash
 cd ../frontend
 npm install
@@ -75,8 +75,9 @@ VITE_API_URL=http://localhost:5000
 ### Base URL
 http://localhost:5000/api/events
 
-Endpoints
-🔹 GET /api/events
+**Endpoints**
+
+##🔹 GET /api/events
 
 Fetch all events.
 ```
@@ -89,16 +90,16 @@ Fetch all events.
   }
 ]
 ```
-🔹 GET /api/events/search?location=Delhi
+##🔹 GET /api/events/search?location=Delhi
 
 Returns events filtered by location.
 
-🔹 POST /api/events
+##🔹 POST /api/events
 
 Create a new event.
 
-Body (JSON):
 ```
+Body (JSON):
 {
   "title": "Tech Conference",
   "location": "Bangalore",
@@ -106,38 +107,39 @@ Body (JSON):
   "description": "A networking event for tech enthusiasts."
 }
 ```
-🔹 GET /api/events/random
+##🔹 GET /api/events/random
 
 Generates dynamic dummy events (for demo).
 
-🧠 Features
+###🧠 Features
 
-🔍 Live search by location
+##🔍 Live search by location
 
-➕ Add new events instantly
+##➕ Add new events instantly
 
-💾 Dynamic dummy event generator (for testing)
+##💾 Dynamic dummy event generator (for testing)
 
-🌗 Dark mode theme
+##🌗 Dark mode theme
 
-⚡ Fast and lightweight with Vite + Tailwind
+##⚡ Fast and lightweight with Vite + Tailwind
 
-🌐 Deployment
+##🌐 Deployment
 
 Both frontend and backend are deployed separately on Railway.
 
-Frontend: https://your-frontend-url.railway.app
+**Frontend**: https://your-frontend-url.railway.app
 
-Backend: https://your-backend-url.railway.app
+**Backend**: https://your-backend-url.railway.app
 
 ##🧑‍💻 Author
 
 Vahid Hussain
 📧 vahidhusyn@gmail.com
 
-🌐 LinkedIn
+##🌐 LinkedIn
  • GitHub
 
 ##📜 License
 
 This project is open-source under the MIT License.
+
