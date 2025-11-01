@@ -75,7 +75,7 @@ VITE_API_URL=http://localhost:5000
 ### Base URL
 http://localhost:5000/api/events
 
-**Endpoints**
+### Endpoints
 
 ### 🔹 GET /api/events
 
@@ -136,11 +136,13 @@ Both frontend and backend are deployed separately on Railway.
 Vahid Hussain
 📧 vahidhusyn@gmail.com
 
-## 🌐 [LinkedIn] (https://www.linkedin.com/in/vahid-hussain/)
+## 🌐 LinkedIn
+[LinkedIn] (https://www.linkedin.com/in/vahid-hussain/)
 
 ## 📜 License
 
 This project is open-source under the MIT License.
+
 
 
 
