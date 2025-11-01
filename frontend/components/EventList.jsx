@@ -39,7 +39,7 @@ export default function EventList() {
 
   // Generate dummy events via backend
   const handleGenerateDummy = async () => {
-    await fetch(`${baseUrl}/api/events/dummy`, { method: "POST" });
+    await fetch(`${baseUrl}/api/events/seed`, { method: "POST" });
     fetchAllEvents();
   };
 
