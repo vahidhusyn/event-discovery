@@ -77,7 +77,7 @@ http://localhost:5000/api/events
 
 **Endpoints**
 
-##🔹 GET /api/events
+###🔹 GET /api/events
 
 Fetch all events.
 ```
@@ -90,11 +90,11 @@ Fetch all events.
   }
 ]
 ```
-##🔹 GET /api/events/search?location=Delhi
+### 🔹 GET /api/events/search?location=Delhi
 
 Returns events filtered by location.
 
-##🔹 POST /api/events
+### 🔹 POST /api/events
 
 Create a new event.
 
@@ -107,21 +107,21 @@ Body (JSON):
   "description": "A networking event for tech enthusiasts."
 }
 ```
-##🔹 GET /api/events/random
+### 🔹 GET /api/events/random
 
 Generates dynamic dummy events (for demo).
 
-###🧠 Features
+### 🧠 Features
 
-##🔍 Live search by location
+### 🔍 Live search by location
 
-##➕ Add new events instantly
+### ➕ Add new events instantly
 
-##💾 Dynamic dummy event generator (for testing)
+### 💾 Dynamic dummy event generator (for testing)
 
-##🌗 Dark mode theme
+### 🌗 Dark mode theme
 
-##⚡ Fast and lightweight with Vite + Tailwind
+### ⚡ Fast and lightweight with Vite + Tailwind
 
 ##🌐 Deployment
 
@@ -142,4 +142,5 @@ Vahid Hussain
 ##📜 License
 
 This project is open-source under the MIT License.
+
 
