@@ -77,7 +77,7 @@ http://localhost:5000/api/events
 
 **Endpoints**
 
-###🔹 GET /api/events
+### 🔹 GET /api/events
 
 Fetch all events.
 ```
@@ -111,7 +111,7 @@ Body (JSON):
 
 Generates dynamic dummy events (for demo).
 
-### 🧠 Features
+## 🧠 Features
 
 ### 🔍 Live search by location
 
@@ -142,5 +142,6 @@ Vahid Hussain
 ##📜 License
 
 This project is open-source under the MIT License.
+
 
 
