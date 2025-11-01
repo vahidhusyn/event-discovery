@@ -16,7 +16,7 @@ Built using **React (Vite)** on the frontend and **Node.js + Express** on the ba
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/event-discovery.git
+git clone https://github.com/vahidhusyn/event-discovery.git
 cd event-discovery bash
 ```
 
@@ -141,6 +141,7 @@ Vahid Hussain
 ## 📜 License
 
 This project is open-source under the MIT License.
+
 
 
 
