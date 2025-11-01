@@ -123,7 +123,7 @@ Generates dynamic dummy events (for demo).
 
 ### ⚡ Fast and lightweight with Vite + Tailwind
 
-##🌐 Deployment
+## 🌐 Deployment
 
 Both frontend and backend are deployed separately on Railway.
 
@@ -142,6 +142,7 @@ Vahid Hussain
 ## 📜 License
 
 This project is open-source under the MIT License.
+
 
 
 
