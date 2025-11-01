@@ -51,7 +51,7 @@ export default function App() {
 
         <h1 className="text-3xl font-bold m-10 text-center">Create events and watch them below!</h1>
 
-        <CreateEventForm onEventCreated={() => fetchEvents()} />
+        <CreateEventForm onEventCreated={fetchEvents} />
 
         {/* Pass both events and fetch function to EventList */}
         <EventList events={events} fetchEvents={fetchEvents} />

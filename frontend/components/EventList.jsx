@@ -1,29 +1,20 @@
 import { useEffect, useState } from "react";
 
-export default function EventList() {
+export default function EventList({ events = [], fetchEvents }) {
   const baseUrl = import.meta.env.VITE_API_BASE;
-  const [allEvents, setAllEvents] = useState([]);
-  const [filteredEvents, setFilteredEvents] = useState([]);
+  const [filteredEvents, setFilteredEvents] = useState(events);
   const [locationFilter, setLocationFilter] = useState("");
 
-  // Fetch all events (initially + refresh)
-  const fetchAllEvents = async () => {
-    const res = await fetch(`${baseUrl}/api/events`);
-    const data = await res.json();
-    setAllEvents(data);
-    setFilteredEvents(data);
-  };
-
   useEffect(() => {
-    fetchAllEvents();
-  }, []);
+    setFilteredEvents(events);
+  }, [events]);
 
   // Instant search with debounce
   useEffect(() => {
     const delay = setTimeout(async () => {
       const query = locationFilter.trim();
       if (query === "") {
-        setFilteredEvents(allEvents);
+        setFilteredEvents(events);
         return;
       }
 
@@ -35,15 +26,15 @@ export default function EventList() {
     }, 300);
 
     return () => clearTimeout(delay);
-  }, [locationFilter, allEvents]);
+  }, [locationFilter, events]);
 
-  // Generate dummy events via backend
+  // Dummy button (only if backend truly empty)
   const handleGenerateDummy = async () => {
     await fetch(`${baseUrl}/api/events/seed`, { method: "POST" });
-    fetchAllEvents();
+    fetchEvents();
   };
 
-  const isBackendEmpty = allEvents.length === 0;
+  const isBackendEmpty = events.length === 0;
 
   return (
     <div className="max-w-6xl mx-auto px-4 pb-16">
@@ -58,7 +49,7 @@ export default function EventList() {
         />
       </div>
 
-      {/* Dummy button (only if backend truly empty) */}
+      {/* Dummy button */}
       {isBackendEmpty && (
         <div className="text-center mt-10">
           <button

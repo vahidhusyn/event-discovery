@@ -12,7 +12,6 @@ export default function CreateEventForm({ onEventCreated }) {
   const baseUrl = import.meta.env.VITE_API_BASE;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,13 +24,24 @@ export default function CreateEventForm({ onEventCreated }) {
     setError(null);
 
     try {
+      const newEvent = {
+        title: formData.title,
+        description: formData.description,
+        location: formData.location,
+        date: formData.date,
+        maxParticipants: Number(formData.maxParticipants),
+        currentParticipants: 0,
+      };
+
       const res = await fetch(`${baseUrl}/api/events`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, currentParticipants: 0 }),
+        body: JSON.stringify(newEvent),
       });
 
       if (!res.ok) throw new Error("Failed to create event");
+
+      // ✅ Reset form after success
       setFormData({
         title: "",
         description: "",
@@ -39,8 +49,13 @@ export default function CreateEventForm({ onEventCreated }) {
         date: "",
         maxParticipants: "",
       });
-      onEventCreated(); // 🔁 refresh event list
+
+      // ✅ Refresh parent list only after successful creation
+      if (typeof onEventCreated === "function") {
+        onEventCreated();
+      }
     } catch (err) {
+      console.error("Error creating event:", err);
       setError(err.message);
     } finally {
       setLoading(false);
@@ -107,7 +122,9 @@ export default function CreateEventForm({ onEventCreated }) {
       <button
         type="submit"
         disabled={loading}
-        className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition hover:cursor-pointer"
+        className={`mt-4 w-full ${
+          loading ? "bg-blue-400" : "bg-blue-600 hover:bg-blue-700"
+        } text-white py-2 rounded-lg transition hover:cursor-pointer`}
       >
         {loading ? "Creating..." : "Create Event"}
       </button>
