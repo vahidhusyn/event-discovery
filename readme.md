@@ -131,17 +131,18 @@ Both frontend and backend are deployed separately on Railway.
 
 **Backend**: https://your-backend-url.railway.app
 
-##🧑‍💻 Author
+## 🧑‍💻 Author
 
 Vahid Hussain
 📧 vahidhusyn@gmail.com
 
-##🌐 LinkedIn
+## 🌐 LinkedIn
  • GitHub
 
-##📜 License
+## 📜 License
 
 This project is open-source under the MIT License.
+
 
 
 
