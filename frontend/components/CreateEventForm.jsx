@@ -9,6 +9,7 @@ export default function CreateEventForm({ onEventCreated }) {
     maxParticipants: "",
   });
 
+  const baseUrl = import.meta.env.VITE_API_BASE;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   
@@ -24,7 +25,7 @@ export default function CreateEventForm({ onEventCreated }) {
     setError(null);
 
     try {
-      const res = await fetch("http://localhost:5000/api/events", {
+      const res = await fetch(`${baseUrl}/api/events`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, currentParticipants: 0 }),

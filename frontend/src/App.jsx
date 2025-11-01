@@ -3,14 +3,15 @@ import EventList from "../components/EventList";
 import CreateEventForm from "../components/CreateEventForm";
 
 export default function App() {
+  const baseUrl = import.meta.env.VITE_API_BASE;
   const [events, setEvents] = useState([]);
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "dark");
 
   const fetchEvents = async (location = "") => {
     const url = location
-      ? `http://localhost:5000/api/events?location=${encodeURIComponent(location)}`
-      : "http://localhost:5000/api/events";
+      ? `${baseUrl}/api/events?location=${encodeURIComponent(location)}`
+      : `${baseUrl}/api/events`;
 
     const res = await fetch(url);
     const data = await res.json();

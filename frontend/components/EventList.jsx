@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 
 export default function EventList() {
+  const baseUrl = import.meta.env.VITE_API_BASE;
   const [allEvents, setAllEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [locationFilter, setLocationFilter] = useState("");
 
   // Fetch all events (initially + refresh)
   const fetchAllEvents = async () => {
-    const res = await fetch("http://localhost:5000/api/events");
+    const res = await fetch(`${baseUrl}/api/events`);
     const data = await res.json();
     setAllEvents(data);
     setFilteredEvents(data);
@@ -27,7 +28,7 @@ export default function EventList() {
       }
 
       const res = await fetch(
-        `http://localhost:5000/api/events?location=${encodeURIComponent(query)}`
+        `${baseUrl}/api/events?location=${encodeURIComponent(query)}`
       );
       const data = await res.json();
       setFilteredEvents(data);
@@ -38,7 +39,7 @@ export default function EventList() {
 
   // Generate dummy events via backend
   const handleGenerateDummy = async () => {
-    await fetch("http://localhost:5000/api/events/dummy", { method: "POST" });
+    await fetch(`${baseUrl}/api/events/dummy`, { method: "POST" });
     fetchAllEvents();
   };
 
