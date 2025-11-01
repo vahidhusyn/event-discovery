@@ -107,7 +107,7 @@ Body (JSON):
   "description": "A networking event for tech enthusiasts."
 }
 ```
-### 🔹 GET /api/events/random
+### 🔹 GET /api/events/seed
 
 Generates dynamic dummy events (for demo).
 
@@ -136,12 +136,12 @@ Both frontend and backend are deployed separately on Railway.
 Vahid Hussain
 📧 vahidhusyn@gmail.com
 
-## 🌐 LinkedIn
- • GitHub
+## 🌐 [LinkedIn] (https://www.linkedin.com/in/vahid-hussain/)
 
 ## 📜 License
 
 This project is open-source under the MIT License.
+
 
 
 
